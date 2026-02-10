@@ -1,0 +1,405 @@
+/*
+ * TarotMasterAI Landing Page Stylesheet
+ *
+ * This stylesheet defines the visual language for the TarotMasterAI landing page.
+ * It intentionally uses a restrained, editorial palette with dark backgrounds and
+ * gold accents to evoke the brand’s high‑fashion maison positioning. Spacing
+ * and typography are thoughtfully handled to emphasise negative space and
+ * architectural composition. All colours, fonts and layout choices are meant
+ * to support clarity and authority without decorative excess.
+ */
+
+/* Root variables for easy theming */
+:root {
+  --color-bg: #0e0e0e;       /* Primary background colour */
+  --color-surface: #141414;   /* Secondary surface colour */
+  --color-accent: #d4af37;    /* Gold accent colour */
+  --color-text: #e5e5e5;      /* Primary text colour */
+  --color-muted: #777777;     /* Muted text colour */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* Global element resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Utility container for consistent horizontal padding */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Fixed header with translucent background */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(14, 14, 14, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo,
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--color-accent);
+  width: 0;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  background-image: url('hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 14, 14, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  max-width: 700px;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: var(--color-accent);
+  color: #0e0e0e;
+}
+
+.btn.primary:hover {
+  background: #b8962f;
+}
+
+.btn.secondary {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn.secondary:hover {
+  background: var(--color-accent);
+  color: #0e0e0e;
+}
+
+.btn.tertiary {
+  border: 1px solid var(--color-muted);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.btn.tertiary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* General section spacing */
+section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+}
+
+/* Features */
+.features {
+  background: var(--color-surface);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Readings */
+.readings {
+  background: var(--color-bg);
+}
+
+.readings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.reading-card {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border: 1px solid #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+}
+
+.reading-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.reading-card p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.reading-card .btn {
+  align-self: start;
+  margin-top: 1rem;
+}
+
+/* Frameworks */
+.frameworks {
+  background: var(--color-surface);
+}
+
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.framework h5 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-accent);
+}
+
+.framework p {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.hierarchy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.hierarchy h4 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+/* FAQ */
+.faq {
+  background: var(--color-bg);
+}
+
+.faq-item {
+  border-bottom: 1px solid #2b2b2b;
+  padding: 1rem 0;
+}
+
+.faq .question {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq .question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .question::after {
+  transform: rotate(45deg);
+}
+
+.faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.faq-item.open .answer {
+  max-height: 500px;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--color-surface);
+  padding: 2rem 0;
+  color: var(--color-muted);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
